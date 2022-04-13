@@ -107,7 +107,7 @@ void setup()
     Serial.println("no ethernet!"); 
   }
 
-  while (Ethernet.linkState() == LinkOFF) 
+  while (Ethernet.linkState() != LinkON) 
   {
     Ethernet.loop();
     //Serial.println("Ethernet cable is not connected.");
@@ -144,7 +144,7 @@ void loop()
     reboot();
   }
 
-  while (Ethernet.linkState() == LinkOFF) 
+  while (Ethernet.linkState() != LinkON) 
   {
     //Serial.println("Ethernet cable is not connected.");
     Ethernet.loop();
